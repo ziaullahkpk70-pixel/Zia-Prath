@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ZP Quran V2 | آف لائن ضیا قرآن</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="logo-box">
+            <h1 class="glow-title">ZP QURAN</h1>
+            <p>VERSION 2.0</p>
+        </div>
+        <div class="spinner"></div>
+        <p style="margin-top: 1rem; color: #a7f3d0;">ڈیٹا چیک کیا جا رہا ہے...</p>
+    </div>
+
+    <!-- Layout -->
+    <div class="app-layout" style="display: none;" id="main-app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>فہرست سورتیں</h2>
+                <i data-lucide="x" class="hide-mobile" id="close-sidebar" style="cursor: pointer;"></i>
+            </div>
+            <div class="surah-list" id="surah-list">
+                <!-- List dynamically generated -->
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content-area">
+
+            <header class="app-header">
+                <button class="icon-btn" id="menu-btn"><i data-lucide="menu"></i></button>
+                <div class="header-titles">
+                    <span class="sub-heading">ZP QURAN V2</span>
+                    <h1 id="header-surah-name">سورۃ لاڈ کی جا رہی ہے...</h1>
+                </div>
+                <button class="icon-btn" id="cache-info" title="Offline Cached Status">
+                    <i data-lucide="wifi" id="network-icon"></i>
+                </button>
+            </header>
+
+            <div class="surah-info-card" id="surah-info">
+                <!-- Info injected here -->
+            </div>
+
+            <div class="verses-container" id="verses-container">
+                <p style="text-align: center; margin-top: 50px; color: var(--gold);">براہ کرم سورت منتخب کریں...</p>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Template for Verse -->
+    <template id="verse-card-template">
+        <div class="verse-card">
+            <div class="verse-header">
+                <span class="ayah-number">1</span>
+                <div class="verse-actions">
+                    <i data-lucide="bookmark"></i>
+                    <i data-lucide="copy"></i>
+                </div>
+            </div>
+
+            <!-- Arabic Content -->
+            <div class="arabic-text"></div>
+
+            <!-- Translation Boxes (Split format) -->
+            <div class="translation-boxes">
+                <div class="t-box urdu-box">
+                    <div class="box-badge">اردو ترجمہ</div>
+                    <div class="box-content urdu-text"></div>
+                </div>
+                <div class="t-box english-box">
+                    <div class="box-badge">ENG TRANSLATION</div>
+                    <div class="box-content eng-text"></div>
+                </div>
+            </div>
+
+            <!-- Full Lines (Optional for detailed reading) -->
+            <div class="full-lines">
+                <div class="f-line urdu-line">
+                    <span class="dot"></span>
+                    <p class="urdu-text full"></p>
+                </div>
+                <div class="f-line eng-line">
+                    <span class="dot"></span>
+                    <p class="eng-text full"></p>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
